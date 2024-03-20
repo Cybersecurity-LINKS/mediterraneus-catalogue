@@ -4,6 +4,7 @@
 
 import Router from 'express';
 import ChallengeController from './controllers/challenges';
+import AssetController from './controllers/assets';
 import verifyTokenPresentation from './middleware/verifyTokenPresentation';
 
 const router = Router();
@@ -15,5 +16,6 @@ router.get("/hello-world", verifyTokenPresentation, (req, res) => {
     res.json('Hello World!')
 }); 
 
+router.get("/assets", AssetController.getAssets); 
 
 export default router;
